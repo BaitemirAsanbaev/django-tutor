@@ -1,0 +1,22 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'style.css'%}">
+</head>
+<body>
+  <h2>Jurnal</h2>
+  <a href="/create">Create</a>
+  <div>
+    {% for i in data %}
+      <h1>{{i.group}}</h1>
+      <p>{{i.amount}}</p>
+      <a href="/update/{{i.id}}">Update</a>
+      <a href="/delete/{{i.id}}">Delete</a>
+    {% endfor %}
+  </div>
+</body>
+</html>
