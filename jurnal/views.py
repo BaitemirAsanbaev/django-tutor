@@ -9,7 +9,7 @@ def home_page(request):
 def create_jurnal(request):
     form = JurnalForms
     if request.method == 'POST':
-        form = JurnalForms(request.POST)
+        form = JurnalForms(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('home')
@@ -20,7 +20,7 @@ def update_jurnal(request, id):
     jurnal = Jurnal.objects.get(id=id)
 
     if request.method == 'POST':
-        form = JurnalForms(request.POST, instance=jurnal)
+        form = JurnalForms(request.POST, request.FILES, instance=jurnal)
         if form.is_valid():
             form.save()
             return redirect('home')

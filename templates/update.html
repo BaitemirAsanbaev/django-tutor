@@ -7,7 +7,7 @@
 </head>
 <body>
   <h1>Update that shit</h1>
-  <form class="create-form" action="" method="post" enctype="multipart/form-data">
+  <form class="create-form" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{form.as_p}}
     <button>Update</button>

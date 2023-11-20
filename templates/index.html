@@ -9,13 +9,17 @@
 </head>
 <body>
   <h2>Jurnal</h2>
+  <img src="{% static 'images/apple-logo.svg' %}" width="50"/>
   <a href="/create">Create</a>
   <div>
     {% for i in data %}
+    <div class="card"> 
       <h1>{{i.group}}</h1>
       <p>{{i.amount}}</p>
+      <img src="{{i.image.url}}" width="300">
       <a href="/update/{{i.id}}">Update</a>
       <a href="/delete/{{i.id}}">Delete</a>
+    </div>
     {% endfor %}
   </div>
 </body>
